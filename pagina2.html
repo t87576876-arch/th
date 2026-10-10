@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para você ❤️</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="pagina-romantica">
+
+    <!-- Foto de fundo -->
+    <div class="fundo"></div>
+
+    <!-- Camada escura sobre a foto -->
+    <div class="sombra"></div>
+
+    <!-- Conteúdo romântico -->
+    <main class="mensagem">
+
+        <div class="coracao">♥</div>
+
+        <h1 id="titulo"></h1>
+
+        <div class="linha"></div>
+
+        <p class="texto texto1">
+            Sei que esse final de semana foi de intensas emoções, reflexões e de uma reconexão linda com Deus. Queria que a primeira coisa que você visse ao chegar fosse este recado, para te lembrar do quanto eu te amo e do orgulho imenso que tenho de você.
+
+        </p>
+
+        <p class="texto texto2">
+           Descanse bastante, sinta o aconchego da sua casa e saiba que estou aqui ansioso para te dar um abraço bem apertado , aquele cheiro que vc amaa, e também ouvir todas as histórias que você quiser compartilhar.
+
+        </p>
+
+        <p class="texto texto3">
+           Que essa paz e essa luz do EJC permaneçam sempre no seu coração.  Vc foi e sempre vai ser minha melhor escolha! ❤️
+          
+        </p>
+
+
+        <p class="eu-te-amo">Eu te amo! ❤️</p>
+
+        <div class="coracoes-final">♥ ♡ ♥</div>
+
+        <img class="foto-final" src="imagens/IMG_2654.JPG.jpeg" alt="">
+
+        <div class="player-musica">
+    
+
+   
+
+
+<audio id="musica" controls autoplay loop>
+    <source src="musicas/Di Paullo e Paulino - No céu dos braços teus (El Condor Pasa).mp3" type="audio/mpeg">
+    Seu navegador não suporta áudio.
+</audio>
+
+<script>
+    window.addEventListener("DOMContentLoaded", function() {
+        const musica = document.getElementById("musica");
+
+        musica.play().catch(function(erro) {
+            console.log("O navegador bloqueou a reprodução automática.");
+        });
+    });
+</script>
+</div>
+
+    </main>
+
+    <script>
+        // Título aparecendo letra por letra
+        const frase = "Para você, meu amor ❤️";
+        const titulo = document.getElementById("titulo");
+
+        let letra = 0;
+
+        function escreverTitulo() {
+            if (letra < frase.length) {
+                titulo.textContent += frase.charAt(letra);
+                letra++;
+                setTimeout(escreverTitulo, 100);
+            } else {
+                document.querySelectorAll(".texto, .eu-te-amo")
+                    .forEach(elemento => {
+                        elemento.classList.add("aparecer");
+                    });
+            }
+        }
+
+        window.addEventListener("load", () => {
+            setTimeout(escreverTitulo, 500);
+        });
+    </script>
+
+</body>
+</html>
